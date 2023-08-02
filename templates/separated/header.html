@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+    <link
+      rel="shortcut icon"
+      href="/static/assets/image/logo/cover_chart.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/assets/css/bootstrap-5.2.3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/static/assets/css/main/style.css" />
+    <link
+      rel="stylesheet"
+      href="/static/assets/css/fontawesome@6.3.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    {# SweetAlert2 #}
+    <script src="/static/assets/js/sweetalert2/script.js"></script>
+  </head>
+
+  <body>
+    <!-- PreLoader -->
+    <div id="overlayer"></div>
+    <span class="loader">
+      <span class="loader-inner"></span>
+    </span>
+    <nav
+      class="navbar navbar-dark bg-dark mb-5 fixed-top"
+      style="--bs-bg-opacity: 0.95"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5 brand-title" href="#">DM 2023</a>
+        <button
+          class="navbar-toggler me-5"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end text-bg-dark"
+          tabindex="-1"
+          id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <a
+              class="offcanvas-title navbar-brand ms-5 brand-title"
+              id="offcanvasDarkNavbarLabel"
+              href="/"
+              >DM 2023</a
+            >
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link {{'active' if title == 'Beranda'}}"
+                  aria-current="page"
+                  href="/"
+                  >Beranda</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle {{'active' if (title == 'Manual') or (title == 'Auto')}}"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Preproses
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li>
+                    <a
+                      class="dropdown-item {{'active' if title == 'Manual'}}"
+                      href="/manual"
+                      >Teks Biasa</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item {{'active' if title == 'Auto'}}"
+                      href="/auto"
+                      >Dari File (Masih Diproses)</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><a class="dropdown-item" href="#">Lainnya</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link {{'active' if title == 'Kredit'}}"
+                  aria-current="page"
+                  href="/kredit"
+                  >Kredit</a
+                >
+              </li>
+            </ul>
+            <!-- <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="...." aria-label="Search">
+                        <button class="btn btn-success" type="submit">Cari</button>
+                    </form> -->
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="content m-5">
+      <div class="mt-5">
+        <div class="content mt-5" style="visibility: hidden">separated</div>
+        <div id="google_translate_element"></div>
+

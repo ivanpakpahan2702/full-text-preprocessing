@@ -1,0 +1,112 @@
+{% include "separated/header.html" %}
+<div class="main-content mt-5">
+  <br />
+  <p align="justify">
+    Untuk mencapai tujuan penelitian dan memecahkan suatu permasalahan dalam
+    kasus penambangan data, diperlukan teknik yang harus dikerjakan, salah
+    satunya adalah teknik pengolahan data. Tanpa adanya proses pengolahan data,
+    data masih belum bisa dimanfaatkan untuk kepentingan perusahaan maupun dalam
+    penelitian. Untuk itu, diperlukan teknik pengolahan data untuk menemukan
+    pola dan mengatasi permasalahan data yang masih tidak teratur. Pengolahan
+    data dapat diterapkan untuk berbagai real case ataupun study case salah
+    satunya yang akan dibahas adalah text mining khususnya dalam tahapan text
+    preprocessing.
+    <br />
+    <br />
+    Text preprocessing adalah suatu proses untuk menyeleksi data teks agar
+    menjadi lebih terstruktur lagi dengan melalui serangkaian tahapan yang
+    meliputi tahapan case folding, tokenizing, normalization, filtering, dan
+    stemming. Tapi, sesungguhnya tidak ada aturan pasti tentang setiap tahapan
+    dalam text preprocessing. Semua itu tergantung dengan jenis serta kondisi
+    data yang dimiliki. Text preprocessing merupakan salah satu implementasi
+    dari text mining. Text mining sendiri adalah suatu kegiatan menambang data,
+    dimana data yang biasanya diambil berupa text yang bersumber dari
+    dokumen-dokumen yang memiliki goals untuk mencari kata kunci yang mewakili
+    dari sekumpulan dokumen tersebut sehingga nantinya dapat dilakukan analisa
+    hubungan antara dokumen-dokumen tersebut. Pada artikel ini akan membahas
+    tentang tahapan text preprocessing dalam sebagai salah satu teknik
+    pengolahan data teks.
+    <br />
+    <br />
+    1. Case Folding
+    <br />
+    Tahapan pertama yang biasanya dilakukan adalah case folding. Tahapan ini
+    hampir selalu disertakan ketika melakukan text preprocessing. Mengapa?
+    Karena data tidak selalu terstruktur dan konsisten dalam penggunaan huruf
+    kapital. Jadi, peran dari case folding adalah untuk menyamaratakan
+    penggunaan huruf kapital. Misalnya data teks yang kita dapat berupa tulisan
+    "DaTA SCIence" maka dengan case folding artinya kata tersebut akan diubah
+    semua hurufnya menjadi huruf kecil (lowercase). Sementara itu, karakter lain
+    yang bukan termasuk huruf dan angka, seperti tanda baca dan spasi dianggap
+    sebagai delimiter. Delimiter ini bisa juga dihapus atau diabaikan dengan
+    menggunakan perintah yang ada di Python.
+    <br />
+    <br />
+    <img
+      src="/static/assets/image/3959311.webp"
+      alt="wallpaperaccess-wallpaper-text-mining"
+      width="70%"
+    />
+    <br />
+    <br />
+    2. Tokenizing
+    <br />
+    Contoh kasusnya adalah data tweet atau kumpulan dataset pesan spam, data
+    pasti terdiri dari beberapa kalimat.Untuk memudahkan proses analisis data,
+    kalimat-kalimat tersebut harus dipecah menjadi kata atau disebut dengan
+    token. Dengan tokenizing, terdapat pembeda antara pemisah kata atau bukan.
+    Jika menggunakan bahasa pemrograman python biasanya tokenizing juga mencakup
+    proses removing number, removing punctuation seperti simbol dan tanda baca
+    yang tidak penting, serta removing whitespace.
+    <br />
+    <br />
+    3. Normalization
+    <br />
+    Lanjutan dari tahapan tokenizing adalah tahapan normalization, yang
+    digunakan untuk menerjemahkan token tersebut kedalam suatu standar bahasa.
+    Untuk melakukan proses ini, diperlukan file kamus slang word yang berisi
+    kata asal dan terjemahannya. Pada sistem ini, format file untuk file
+    kamusnya sudah ditentukan, silahkan cek
+    <a href="/static/formats/format_file.rar">disini</a>.
+    <br />
+    <br />
+    4. Filtering
+    <br />
+    Lanjutan dari tahapan normalization adalah tahapan filtering yang digunakan
+    untuk mengambil kata-kata yang penting dari hasil token tadi. Kata umum yang
+    biasanya muncul dan tidak memiliki makna disebut dengan stopword. Misalnya
+    penggunaan kata penghubung seperti dan, yang, serta, setelah, dan lainnya.
+    Penghilangan stopword ini dapat mengurangi ukuran index dan waktu pemrosesan
+    pada penambangan data. Selain itu, juga dapat mengurangi level noise. Namun,
+    terkadang stopping tidak selalu meningkatkan nilai retrieval. Pembangunan
+    daftar stopword (disebut stoplist) yang kurang hati-hati dapat memperburuk
+    kinerja sistem Information Retrieval (IR). Belum ada suatu kesimpulan pasti
+    bahwa penggunaan stopping akan selalu meningkatkan nilai retrieval, karena
+    pada beberapa penelitian, hasil yang didapatkan cenderung bervariasi. Sama
+    halnya dengan normalization, sistem membutuhkan file stoplist dari pengguna.
+    Format file disesuaikan dari
+    <a href="/static/formats/format_file.rar">format</a> yang telah ditentukan.
+    <br />
+    <br />
+    5. Stemming
+    <br />
+    Tahap stemming adalah tahapan yang juga diperlukan untuk memperkecil jumlah
+    indeks yang berbeda dari satu data sehingga sebuah kata yang memiliki suffix
+    maupun prefix akan kembali ke bentuk dasarnya. Selain itu juga untuk
+    melakukan pengelompokan kata-kata lain yang memiliki kata dasar dan arti
+    yang serupa namun memiliki bentuk yang berbeda karena mendapatkan imbuhan
+    yang berbeda pula. Di library NLTK juga sudah tersedia modul untuk proses
+    stemming antara lain, porter, lancester, wordnet, dan snowball. Tapi,
+    kembali lagi modul-modul tersebut belum support untuk text berbahasa
+    Indonesia.
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </p>
+</div>
+{% include "separated/footer.html" %}

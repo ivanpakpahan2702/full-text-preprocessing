@@ -1,0 +1,8 @@
+# Clone the repository
+git clone https://github.com/vuejs/vuejs.org.git
+cd vuejs.org
+# Install the JS dependencies
+yarn
+# Start the server
+yarn start
+# The server should now be running on http://localhost:4000/
